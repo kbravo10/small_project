@@ -7,7 +7,7 @@ function App() {
     event.preventDefault();
     const interestForm= Object.fromEntries(new FormData(event.target).entries());
     
-    setTotal(parseFloat(interestForm.amount) + parseFloat(interestForm.amount*(interestForm.rate/100)))
+    setTotal(parseFloat(interestForm.amount) * (1+(parseFloat((interestForm.rate/100)))))
   }
 
   return (
