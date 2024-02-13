@@ -13,6 +13,14 @@ function App() {
     setTotal(compoundInterest)
   }
 
+  function currencyFormat(num){
+    const formater = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    })
+    return(formater.format(num))
+  }
+
   return (
     <div>
       <h1>Project Client</h1>
@@ -29,7 +37,7 @@ function App() {
         <button type="submit">Amount due:</button>
       </form>
       <p>Total owed after duration compunded monthly for x amounbt of years</p>
-      <p>{total}</p>
+      <p>{currencyFormat(total)}</p>
     </div>
   );
 }
